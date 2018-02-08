@@ -1,0 +1,11 @@
+{
+    "name": "CrazyBricksGame",
+    "version": "0.0.1",
+    "description": "Template",
+    "license": "GPL-3.0-only",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-contrib-sass": "latest",
+        "grunt-contrib-watch": "latest"
+    }
+}
