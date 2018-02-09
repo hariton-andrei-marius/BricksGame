@@ -1,124 +1,128 @@
-body
+html
 {
-	margin: 0;
-	font-family: calibri, roboto, sans-serif;
-	max-width: 100%;
-	max-height: 100%;
-	overflow: hidden;
+	height: 100%;
 
-	#instructions
+	body
 	{
-		position: absolute;
-		top: 10px;
-		left: 10px;
-
-		color: #FFF;
-	}
-
-	#destroy-button
-	{
-		position: absolute;
-		top: 10px;
-		right: 10px;
-		z-index: 10;
-	}
-
-	#create-button
-	{
-		position: absolute;
-		top: 70px;
-		right: 10px;
-		z-index: 10;
-	}
-
-	#container
-	{
-		min-height: 250px;
-		display: flex;
-		align-items: flex-start;
-		align-content: end;
-		flex-wrap: wrap-reverse;
-
-		background: #191919;
-
+		margin: 0;
+		font-family: calibri, roboto, sans-serif;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
 
-		.brick
+		#instructions
+		{
+			position: absolute;
+			top: 10px;
+			left: 10px;
+
+			color: #FFF;
+		}
+
+		#destroy-button
+		{
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			z-index: 10;
+		}
+
+		#create-button
+		{
+			position: absolute;
+			top: 70px;
+			right: 10px;
+			z-index: 10;
+		}
+
+		#container
 		{
 			display: flex;
-			align-items: center;
-			justify-content: center;
+			align-items: flex-start;
+			align-content: end;
+			flex-wrap: wrap-reverse;
 
 			background: #191919;
 
-			border: 0;
-			width: 0;
-			height: 0;
-			padding: 0;
-			margin: 0;
+			width: 100%;
+			height: 100%;
 
-			transform: scale(1,1);
-			transition: 1s all ease;
-
-			&:hover
+			.brick
 			{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				background: #191919;
+
+				border: 0;
+				width: 0;
+				height: 0;
+				padding: 0;
+				margin: 0;
+
+				transform: scale(1,1);
+				transition: 1s all ease;
+
+				&:hover
+				{
+					.button
+					{
+						visibility: visible;
+					}
+				}
+
 				.button
 				{
-					visibility: visible;
+					visibility: hidden;
 				}
 			}
 
-			.button
+			.visible
 			{
-				visibility: hidden;
+				border: 10px solid #2f2f31;
+				width: 150px;
+				height: 100px;
+				padding: 0;
+				margin: 10px;
+			}
+
+			.destroyed
+			{
+				transform: scale(0,0);
+				transition: 1s all ease;
+			}
+
+			.removed
+			{
+				margin: 0;
+				padding: 0;
+				border: 0;
+				height: 0;
+				width: 0;
+				transition: height 1s, width 1s, padding 1s, margin 1s, border 1s;
 			}
 		}
 
-		.visible
+		.button
 		{
-			border: 10px solid #2f2f31;
-			width: 150px;
-			height: 100px;
-			padding: 0;
-			margin: 10px;
-		}
+			background: #2f2f31;
+			border: none;
 
-		.destroyed
-		{
-			transform: scale(0,0);
-			transition: 1s all ease;
-		}
+			font-variant: small-caps;
+			color: #fff;
+			height: 50px;
 
-		.removed
-		{
-			margin: 0;
-			padding: 0;
-			border: 0;
-			height: 0;
-			width: 0;
-			transition: height 1s, width 1s, padding 1s, margin 1s, border 1s;
-		}
-	}
+			&:hover
+			{
+				cursor: pointer;
+				background: #4f4f53;
+			}
 
-	.button
-	{
-		background: #2f2f31;
-		border: none;
-
-		font-variant: small-caps;
-		color: #fff;
-		height: 50px;
-
-		&:hover
-		{
-			cursor: pointer;
-			background: #4f4f53;
-		}
-
-		&:active
-		{
-			background: #6f6f75;
+			&:active
+			{
+				background: #6f6f75;
+			}
 		}
 	}
 }
